@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="{{ url_for('static', filename='js/servicos.js') }}"></script>
+    <title>Serviços</title>
+</head>
+<body>
+     <h1>Serviços do Hotel</h1>
+      <div class="servicos">
+        <div class="servico">
+            Café da Manhã
+            <br>
+          <input type="radio" id="cafe-da-manha-sim" name="cafe-da-manha" value="sim">
+          <label for="cafe-da-manha-sim">Sim</label>
+          <input type="radio" id="cafe-da-manha-nao" name="cafe-da-manha" value="nao" checked>
+          <label for="cafe-da-manha-nao">Não</label>
+        </div>
+        <div class="servico">
+            Serviço de Quarto
+            <br>
+          <input type="radio" id="servico-de-quarto-sim" name="servico-de-quarto" value="sim">
+          <label for="servico-de-quarto-sim">Sim</label>
+          <input type="radio" id="servico-de-quarto-nao" name="servico-de-quarto" value="nao" checked>
+          <label for="servico-de-quarto-nao">Não</label>
+        </div>
+        <div class="servico">
+            Lavanderia
+            <br>
+          <input type="radio" id="lavanderia-sim" name="lavanderia" value="sim">
+          <label for="lavanderia-sim">Sim</label>
+          <input type="radio" id="lavanderia-nao" name="lavanderia" value="nao" checked>
+          <label for="lavanderia-nao">Não</label>
+        </div>
+        <div class="servico">
+            Almoço
+            <br>
+          <input type="radio" id="almoco-sim" name="almoco" value="sim">
+          <label for="almoco-sim">Sim</label>
+          <input type="radio" id="almoco-nao" name="almoco" value="nao" checked>
+          <label for="almoco-nao">Não</label>
+        </div>
+        <div class="servico">
+            Janta
+            <br>
+          <input type="radio" id="janta-sim" name="janta" value="sim">
+          <label for="janta-sim">Sim</label>
+          <input type="radio" id="janta-nao" name="janta" value="nao" checked>
+          <label for="janta-nao">Não</label>
+        </div>
+        <button type="button" onclick="enviarServicos()">Enviar</button>
+      </div>
+  <p id="total"></p>
+    <div class="rodape">
+        <a href="/">Voltar para a página inicial</a>
+    </div>
+</body>
+</html>
+</html>
