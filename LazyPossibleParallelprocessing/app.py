@@ -22,11 +22,13 @@ class Usuario:
         self.total += n
 
 class Reserva:
-    def __init__(self, nome, quarto, pagamento, diferenca):
+    def __init__(self, nome, quarto, pagamento, diferenca, data1, data2):
         self.nome = nome
         self.quarto = quarto
         self.pagamento = pagamento
         self.diferenca = diferenca
+        self.data1 = data1
+        self.data2 = data2
 
 usuarios = []
 
@@ -97,9 +99,12 @@ def reservar():
     quarto = data.get('quarto')
     pagamento = data.get('pagamento')
     diferenca = data.get('diferenca')
+    data1 = data.get('data1')
+    data2 = data.get('data2')
 
-    nova_reserva = Reserva(nome, quarto, pagamento, diferenca)
+    nova_reserva = Reserva(nome, quarto, pagamento, diferenca, data1, data2)
     adicionar_reserva_usuario(nome, nova_reserva)
+    adicionar_total(nome, diferenca*300)
 
     return jsonify({"redirect": "/registros"}), 200
 

@@ -13,13 +13,18 @@ async function adicionarReserva(event) {
     event.preventDefault(); 
     const nome = document.getElementById("nome").value.trim();
     const quarto = document.getElementById("quarto").value.trim();
-    const pagamento = document.getElementById('pagamento');
+    const formapagamento = document.getElementById('pagamento');
     const data1 = document.getElementById("data-checkin").value;
     const data2 = document.getElementById("data-checkout").value;
     let dataa = stringParaDate(data1)
     let datab = stringParaDate(data2)
     let diferenca = datab.getTime() - dataa.getTime()
     diferenca = Math.floor(diferenca/ (1000 * 60 * 60 *24))
+
+    formapagamento.addEventListener('change', function() {
+        const pagamento = pagamentoSelect.value;
+        console.log('Método de pagamento selecionado:', pagamento);
+});
 
     const response = await fetch('/reservar', {
         method: 'POST',
@@ -37,5 +42,5 @@ async function adicionarReserva(event) {
     } else {
         mensagem.textContent = "Erro ao reservar: " + result.message;
     }
-    console.log(diferenca)
+    console.log(pagamento)
 }

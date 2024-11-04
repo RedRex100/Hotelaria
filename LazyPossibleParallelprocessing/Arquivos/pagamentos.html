@@ -18,8 +18,8 @@
                         <li>
                             Quarto: {{ reserva.quarto }}<br>
                             Pagamento: {{ reserva.pagamento }}<br>
-                            Data de Início: {{ reserva.inicio }}<br>
-                            Data de Fim: {{ reserva.fim }}<br>
+                            Data de Início: {{ reserva.data1 }}<br>
+                            Data de Fim: {{ reserva.data2 }}<br>
                             <form id="pagarForm" onsubmit="pagar('{{ usuario.nome }}', '{{ reserva.quarto }}'); return false;">
                                 <button type="submit">Quitar a dívida</button>
                             </form>
