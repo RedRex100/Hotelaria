@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="{{ url_for('static', filename='js/pagamento.js') }}"></script>
+    <title>Pagamentos</title>
+</head>
+<body>
+    {% if usuarios %}
+        <ul>
+        {% for usuario in usuarios %}
+            <li>
+                <strong>{{ usuario.nome }}</strong>
+                <ul>
+                    {% for reserva in usuario.reservas %}
+                        <li>
+                            Quarto: {{ reserva.quarto }}<br>
+                            Pagamento: {{ reserva.pagamento }}<br>
+                            Data de Início: {{ reserva.inicio }}<br>
+                            Data de Fim: {{ reserva.fim }}<br>
+                            <form id="pagarForm" onsubmit="pagar('{{ usuario.nome }}', '{{ reserva.quarto }}'); return false;">
+                                <button type="submit">Quitar a dívida</button>
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <p>Total: R$ {{ usuario.total }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não há usuários com reservas.</p>
+    {% endif %}
+
+</body>
+</html>

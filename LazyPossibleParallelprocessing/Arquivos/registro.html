@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Minhas Reservas</title>
+</head>
+<body>
+    <h1>Minhas Reservas</h1>
+    
+    {% if reservas %}
+        <ul>
+            {% for reserva in reservas %}
+                <li>
+                    Quarto: {{ reserva.quarto }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Você não possui reservas.</p>
+    {% endif %}
+    
+    <div class="rodape">
+        <a href="/">Voltar para a página inicial</a>
+    </div>
+</body>
+</html>

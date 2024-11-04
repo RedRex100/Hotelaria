@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Hotel</title>
+</head>
+<body>
+  <div class="cabeca">
+    <h1>Hotel Encantado</h1>
+  <p>
+    <a href="cadastrar">Cadastrar</a>
+    <a href="login">Login</a>
+    <a href="logout">Logout</a>
+  </p>
+  </div>
+  <div class= "corpo">
+    <h1>Bem-vindo ao Hotel Encantado</h1>
+    <a href="reservas">Reservar</a>
+    <a href="frigobar">Frigobar</a>
+    <a href="servicos">Serviços</a>
+    <a href="pagamentos">Quitar as dívidas</a>
+    <a href="registros">Minhas Reservas</a>
+    <a href="checkout">Checkout</a>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            {% if message == 'Você já está logado!' or "Você não está logado!" or "Você não é adm!"%}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

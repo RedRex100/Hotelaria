@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="{{ url_for('static', filename='js/frigobar.js') }}"></script>
+    <title>Frigobar</title>
+    <title>Checkout</title>
+</head>
+<body>
+    <div class="cabeca">Escolha sua reserva:</div>
+    <div class="corpo">
+        <script>
+            import { escreverReservas } from "script.js";
+            escreverReservas()
+        </script>
+    </div>
+
+
+
+    <div class="rodape">
+        <a href="/">Voltar para a página inicial</a>
+    </div>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
